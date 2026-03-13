@@ -15,11 +15,7 @@ It is built around a fast local workflow:
 
 ## Project Layout
 
-This repository contains the actual app inside:
-
-`the-board-local/`
-
-That nested folder is the Next.js application source.
+The repository root is the Next.js application.
 
 ## Stack
 
@@ -31,10 +27,7 @@ That nested folder is the Next.js application source.
 
 ## Local Development
 
-From the app directory:
-
 ```bash
-cd the-board-local
 npm install
 npm run dev
 ```
@@ -43,7 +36,7 @@ Then open [http://localhost:3000](http://localhost:3000).
 
 ## Data Storage
 
-The app stores its local data in the app directory:
+The app stores its local data in the repository root:
 
 - `data/images.json` for board and image metadata
 - `public/uploads/` for uploaded assets
@@ -55,6 +48,6 @@ The app stores its local data in the app directory:
 - `/api/images` image upload and listing endpoints
 - `/api/folders` board creation and listing endpoints
 
-## Current State
+## Notes
 
-This repo is currently structured as a wrapper repository with the application living in the nested `the-board-local/` directory.
+Local board data and uploaded assets are intentionally ignored by Git.

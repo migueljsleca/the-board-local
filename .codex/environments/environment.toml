@@ -9,7 +9,7 @@ script = ""
 name = "Run"
 icon = "run"
 command = '''
-cd /Users/miguel-leca/Documents/AI/Codex/the-board-local/the-board-local
+cd /Users/miguel-leca/Documents/AI/Codex/the-board-local
 npm install
 npm run dev
 '''
