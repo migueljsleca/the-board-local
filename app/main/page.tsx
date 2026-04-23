@@ -3421,16 +3421,24 @@ export default function Home() {
                 </button>
                 <div className="pointer-events-none absolute bottom-full right-0 mb-2 hidden min-w-[260px] rounded-md border border-white/20 bg-black/90 px-3 py-2 text-right text-[11px] text-white/80 shadow-[0_10px_28px_rgba(0,0,0,0.55)] group-hover:block group-focus-within:block">
                   <p className="whitespace-nowrap text-white/90">
-                    {formatDimensions(activeItem.width, activeItem.height)}
-                    {activeIndex >= 0 ? ` • ${activeIndex + 1}/${navigableItems.length}` : ""}
+                    {activeIndex >= 0 ? `Image ${activeIndex + 1} of ${navigableItems.length}` : "Image"}
                   </p>
-                  <p className="whitespace-nowrap">Weight: {formatMegabytes(activeItem.byteSize)}</p>
                   {activeItem.wasCompressed ? (
-                    <p className="mt-0.5 whitespace-nowrap text-emerald-200/90">
-                      Compressed • Original {formatDimensions(activeItem.originalWidth, activeItem.originalHeight)} • {formatMegabytes(activeItem.originalByteSize)}
-                    </p>
+                    <>
+                      <p className="mt-0.5 whitespace-nowrap text-red-300/95">
+                        Original {formatDimensions(activeItem.originalWidth, activeItem.originalHeight)} • {formatMegabytes(activeItem.originalByteSize)}
+                      </p>
+                      <p className="mt-0.5 whitespace-nowrap text-emerald-300/95">
+                        Compressed {formatDimensions(activeItem.width, activeItem.height)} • {formatMegabytes(activeItem.byteSize)}
+                      </p>
+                    </>
                   ) : (
-                    <p className="mt-0.5 whitespace-nowrap text-white/60">Not compressed</p>
+                    <>
+                      <p className="mt-0.5 whitespace-nowrap text-white/85">
+                        Original {formatDimensions(activeItem.width, activeItem.height)} • {formatMegabytes(activeItem.byteSize)}
+                      </p>
+                      <p className="mt-0.5 whitespace-nowrap text-white/60">Not compressed</p>
+                    </>
                   )}
                 </div>
               </div>
